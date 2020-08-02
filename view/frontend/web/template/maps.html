@@ -1,0 +1,13 @@
+<h3 data-bind="text: getHeading()"></h3>
+<div id="map-container" data-bind="{afterRender: showMap()}">
+    <div class="baato-maps-places">
+        <label for="baato-map-search-input"></label>
+        <input type="text" id="baato-map-search-input" data-bind="attr : { placeholder: jQuery.mage.__('Search...') }"
+               class="baato-map-search-input"/>
+        <ul data-bind="{foreach: places}">
+            <li class="place-selection-button" data-bind="{attr: { 'data-placeId': placeId }}">
+                <span data-bind="{text: name, attr: { 'data-placeId': placeId }}"></span>
+            </li>
+        </ul>
+    </div>
+</div>

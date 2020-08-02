@@ -1,0 +1,53 @@
+<?php
+
+use Baato\Baato\Blocks\Adminhtml\OrderDetails;
+
+/** @var $block OrderDetails */
+
+$shippingLatitudeLongitude = $block->getShippingAddressLatLong();
+
+?>
+<div class="baato-maps-backend-container">
+    <h2><?= __('Shipment Location'); ?></h2>
+
+    <?php if ($shippingLatitudeLongitude['latitude'] && $shippingLatitudeLongitude['longitude']) : ?>
+        <div id="baato-map">
+
+        </div>
+        <script>
+            window.baato_uuid = '<?= $block->getMapKey(); ?>';
+
+            require([
+                'jquery',
+                'underscore',
+                'Baato',
+                'mapbox'
+            ], function ($, _, Baato, mapboxgl) {
+                let latLong = {
+                    lat: '<?= $shippingLatitudeLongitude['latitude']; ?>',
+                    lng: '<?= $shippingLatitudeLongitude['longitude']; ?>',
+                }
+
+                let mapConfigs = {
+                    container: 'baato-map',
+                    style: 'https://api.baato.io/api/v1/styles/breeze?key=' + window.baato_uuid,
+                    center: latLong,
+                    zoom: 13
+                }
+                let map = new mapboxgl.Map(mapConfigs);
+                map.flyTo({
+                    center: latLong
+                });
+                let marker = new mapboxgl.Marker();
+                marker.setLngLat(latLong);
+                marker.addTo(map);
+            });
+        </script>
+
+    <?php else: ?>
+        <div>
+            <?= __('The co-ordinates were not specified by the customer during checkout.') ?>
+        </div>
+    <?php endif; ?>
+
+</div>

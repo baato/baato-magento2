@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Baato_Baato/css/maps.css"/>
+        <css src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" src_type="url"/>
+    </head>
+    <body>
+        <referenceContainer name="order_additional_info">
+            <block name="baato_baato.shipping_address" template="Baato_Baato::order/shipping-address-map.phtml"
+                   class="Baato\Baato\Blocks\Adminhtml\OrderDetails"/>
+        </referenceContainer>
+    </body>
+</page>
