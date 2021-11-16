@@ -3,9 +3,6 @@
     "description": "Integrate Baato.io maps to Magento 2 Storefront Checkout process.",
     "version": "0.1.0",
     "type": "magento2-module",
-    "require": {
-        "magento/module-catalog": "^100.0.*"
-    },
     "autoload": {
         "files": [
             "registration.php"
