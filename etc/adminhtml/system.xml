@@ -16,6 +16,26 @@
                     <label>Baato.io Key</label>
                     <comment>Generated Key for Baato.io Service Integration</comment>
                 </field>
+                <field id="style" translate="label"
+                       type="select"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Map Style</label>
+                    <source_model>Baato\Baato\Model\Config\Style</source_model>
+                    <comment>Map Style</comment>
+                </field>
+                <field id="height" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label"
+                       type="text">
+                    <label>Height</label>
+                    <comment>Canvas Height for Map</comment>
+                </field>
+                <field id="width" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label"
+                       type="text">
+                    <label>Width</label>
+                    <comment>Canvas Width for Map</comment>
+                </field>
             </group>
         </section>
     </system>

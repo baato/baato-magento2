@@ -16,4 +16,9 @@ class MapConfig extends Template
     {
         return $this->_scopeConfig->getValue('baato/general/key');
     }
+
+    public function getStyle()
+    {
+        return $this->_scopeConfig->getValue('baato/general/style');
+    }
 }
