@@ -1,0 +1,14 @@
+{
+    "name": "baato/baato-magento2",
+    "description": "Integrate Baato.io maps to Magento 2 Storefront Checkout process.",
+    "version": "0.1.0",
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Baato\\Baato\\": ""
+        }
+    }
+}
