@@ -32,9 +32,10 @@ define([
          */
         showMap: function () {
             let latLong = this.getCurrentCoordinates();
+            let style = window.baato_style || 'breeze';
             let mapConfigs = {
                 container: 'map-container',
-                style: 'https://api.baato.io/api/v1/styles/breeze?key=' + this.key,
+                style: 'https://api.baato.io/api/v1/styles/' + style + '?key=' + this.key,
                 center: latLong,
                 zoom: 13
             }
